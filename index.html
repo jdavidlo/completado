@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comprobante</title>
 </head>
+    <script src="https://evopaymentsmexico.gateway.mastercard.com/checkout/version/61/checkout.js"
+                data-complete="completeCallback"></script>
 <script type="text/javascript">
-    function complete() {
-    console.log('a');
-          window.postMessage("completado");
-    }
+    function completeCallback(resultIndicator, sessionVersion) {
+                console.log('completado');
+                consoel.log(resultIndicator);
+                consoel.log(sessionVersion);
+            }
 </script>
-<body onload="complete()">
+<body onload="completeCallback()">
     <h1>Cargando</h1>
 </body>
 </html>
